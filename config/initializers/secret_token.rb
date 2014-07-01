@@ -5,4 +5,4 @@
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
 #Icare::Application.config.secret_token = APP_CONFIG.secret_token
-Icare::Application.config.secret_token = "g00fy2014boomerang@pondicherry"
+Icare::Application.config.secret_token = "jbvjasfomnbdvdgfirf78ty7483hrh4tyihy4ytrfghiuty4yhergry"
