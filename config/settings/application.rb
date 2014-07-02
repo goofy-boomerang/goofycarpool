@@ -5,8 +5,8 @@
 # SET SENSITIVE DATA ONLY IN 'local.rb'
 
 SimpleConfig.for :application do
-  set :app_name, 'icare'
-  set :repository_url, 'http://github.com/diowa/icare'
+  set :app_name, 'Goofy Car Pool'
+  set :repository_url, 'http://github.com/goofy-boomerang/goofycarpool'
 
   set :available_locales, Hash[{ :"en-US" => 'English (US)',
                                  :"it-IT" => 'Italiano' }.sort_by { |_, native_name| native_name }]

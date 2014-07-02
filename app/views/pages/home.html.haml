@@ -8,7 +8,7 @@
 #splashscreen
   #splashscreen-container
     %h1
-      Goofy Car Pool
+      Goofy Pool
       -#= APP_CONFIG.app_name
       - if APP_CONFIG.demo_mode
         %small demo
@@ -46,11 +46,12 @@
       %span.fa.fa-leaf
       %h3= t('.help_environment_title')
       %p= t('.help_environment_content')
-  .featurette
+  -#.featurette
     .container
       %span.fa.fa-github
       %h3= t('.open_source_title')
       %p= t('.open_source_content', appname: APP_CONFIG.app_name, source_code_link: link_to(  t('.source_code'), APP_CONFIG.repository_url)).html_safe
+.featurette
 .container
   .ribbon-container
     .ribbon
