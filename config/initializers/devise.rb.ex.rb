@@ -4,13 +4,13 @@ Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
-  config.secret_key = 'f58f1b70bc8ca2baad3a94edd74ae002f49d571dcfb4eb9f87c5de9182fe8a21024c0f0f8c534d81a56d48bea25b01e6876e9a597b17583536f5522e77623426'
+  config.secret_key = APP_CONFIG.devise.secret_key
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  # config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -97,7 +97,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
-  # config.pepper = '06ff5737d8106dfc205095b69ecbe43de75ebcdc86e8b93ee448bb93a00bb7d75e25d012bd495880106b66e478dddae47438408a57320ea47e9e6c7589447316'
+  # config.pepper = '66eb8297e9c9ce4e1d7de7862c8cacf4ad8da49995e8068668c981288264b40ab7ae35bc3c728d98afa1e415d07285109f10cccdf99b1841420c2a0609ed5edb'
 
   # ==> Configuration for :confirmable
   # A period that the user is allowed to access the website even without
@@ -230,6 +230,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  config.omniauth :facebook, APP_CONFIG.facebook.app_id, APP_CONFIG.facebook.secret, { scope: APP_CONFIG.facebook.restricted_group_id ? APP_CONFIG.facebook.scope.concat(', user_groups') : APP_CONFIG.facebook.scope }
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
